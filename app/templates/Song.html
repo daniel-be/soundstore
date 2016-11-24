@@ -1,0 +1,162 @@
+<DOCTYPE! HTML>
+<html lang="en">
+	<head>
+	  <title>Sound Store</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  
+	  <style>
+		/* Remove the navbar's default rounded borders and increase the bottom margin */
+		.navbar {
+		  width: 100%;
+		  margin-bottom: 50px;
+		  border-radius: 0;
+		}
+		
+		footer{
+			background-color: #000;
+			color: white;
+			padding: 15px;
+			height: 10%;
+			font-size: 10;
+			height: 15px;
+			text-align: center;
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+		}
+		
+		.container-fixed{
+			margin: 0 auto;
+			max-width: 300px;
+		}
+	  </style>
+	  <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".clickable-row").click(function() {
+				window.document.location = $(this).data("href");
+			});
+			
+			$(".clickable-row").hover(function(){
+				this.style.backgroundColor = "#444"; 
+				this.style.color = "white";
+				this.css('cursor', 'hand'); /* funktioniert noch nicht */
+			},function(){
+				this.style.backgroundColor = "white"; 
+				this.style.color = "black";
+				this.css('cursor', 'pointer'); /* funktioniert noch nicht */
+			});
+		});
+	  </script>
+	</head>
+	<body>
+		<!-- Navbar-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <img class="navbar-brand" src="Soundstore_neu_weiß.png">
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li><a href="Musikshop.html">Home</a></li>
+				
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genres <span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Pop</a></li>
+					<li><a href="#">EDM</a></li>
+					<li><a href="#">Rock</a></li>
+					<li><a href="#">Classic</a></li> 
+				  </ul>
+				</li>
+				
+				<li class="active"><form class="navbar-form navbar-left" name="search" action="Search.html" id="search"><input type="text" class="form-control" placeholder="search" name="search"> <button class="glyphicon glyphicon-search" type="submit"></form></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="Welcome.html"><span class="glyphicon glyphicon-log-in"></span> Log-In</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+		<br><br><br><br>
+		
+		<div class="container-fixed">
+			<img src="Grid_Pictures\Beyonce.jpg" class="img-rounded" style="width:100%" alt="Image">
+		</div><br><br>
+		
+		
+		<div class="container-fluid">
+			<table class="table table-inverse">
+			  <thead>
+				<tr>
+				  <th>Titel</th>
+				  <th>Artist</th>
+				  <th>Length</th>
+				  <th></th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Sherry Lady</td>
+				  <td>Modern Talking</td>
+				  <td>2:45</td>
+				  <td><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Buy Now</a></td>
+				</tr>
+			  </tbody>
+			</table>
+		</div><br>
+		
+		<h3 style="text-align: center;">Weitere Songs auf dem Album</h2><br>
+		
+		
+		<!-- table -->
+		<div class="container-fluid">
+			<table class="table table-inverse">
+			  <thead>
+				<tr>
+				  <th>#</th>
+				  <th>Titel</th>
+				  <th>Artist</th>
+				  <th>Length</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr class="clickable-row" data-href="Song.html">
+				  <th scope="row">1</th>
+				  <td>Sherry Lady</td>
+				  <td>Modern Talking</td>
+				  <td>2:45</td>
+				</tr>
+				<tr class="clickable-row" data-href="Song.html">
+				  <th scope="row">2</th>
+				  <td>Highway to Hell</td>
+				  <td>AC/DC</td>
+				  <td>3:10</td>
+				</tr>
+				<tr class="clickable-row" data-href="Song.html">
+				  <th scope="row">3</th>
+				  <td>Dreh den Swag auf</td>
+				  <td>MoneyBoy</td>
+				  <td>88</td>
+				</tr>
+			  </tbody>
+			</table>
+		</div><br><br>
+
+	</body>
+	<footer class="footer">
+		<div class="container-fluid">
+			<p>This is the impressum of Sound Store.</p>
+		</div>
+	</footer>
+</html>

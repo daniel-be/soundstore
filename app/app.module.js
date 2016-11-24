@@ -11,15 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('./rxjs-extensions');
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
+var app_component_1 = require('./components/app.component');
 var http_1 = require('@angular/http');
-var app_routing_module_1 = require('./app-routing.module');
+var forms_1 = require('@angular/forms');
+var app_routing_module_1 = require('./modules/app-routing.module');
 //Components
 var song_detail_component_1 = require('./components/song-detail.component');
 var dashboard_component_1 = require('./components/dashboard.component');
 var register_component_1 = require('./components/register.component');
+var album_detail_component_1 = require('./components/album-detail.component');
 //Services
 var song_service_1 = require('./services/song.service');
+var album_service_1 = require('./services/album.service');
+var user_service_1 = require('./services/user.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,6 +31,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule
             ],
@@ -34,9 +39,14 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 song_detail_component_1.SongDetailComponent,
                 dashboard_component_1.DashboardComponent,
-                register_component_1.RegisterComponent
+                register_component_1.RegisterComponent,
+                album_detail_component_1.AlbumDetailComponent
             ],
-            providers: [song_service_1.SongService],
+            providers: [
+                song_service_1.SongService,
+                album_service_1.AlbumService,
+                user_service_1.UserService,
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

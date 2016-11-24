@@ -13,11 +13,11 @@ var http_1 = require('@angular/http');
 var SongService = (function () {
     function SongService(http) {
         this.http = http;
-        this.songUrl = 'http://localhost:3000/song';
+        this.songUrl = 'http://192.168.178.31:3000/song';
     }
-    SongService.prototype.getSong = function () {
-        return this.http.get(this.songUrl + '/')
-            .map(function (res) { console.log(res.json()); return res.json().songs; });
+    SongService.prototype.getSong = function (id) {
+        return this.http.get(this.songUrl + '/' + id)
+            .map(function (res) { console.log(res.json()); return res.json().song; });
     };
     SongService.prototype.getDashboardSongs = function () {
         return this.http.get(this.songUrl + '/latest/6')

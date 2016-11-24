@@ -6,13 +6,13 @@ import { Song } from '../models/song';
 
 @Injectable()
 export class SongService {
-  private songUrl = 'http://localhost:3000/song'
+  private songUrl = 'http://192.168.178.31:3000/song'
 
   constructor(private http: Http) {  }
 
-  getSong(): Observable<Song> {
-    return this.http.get(this.songUrl + '/')
-              .map((res: Response) => {console.log(res.json() as Song); return res.json().songs as Song});
+  getSong(id: number): Observable<Song> {
+    return this.http.get(this.songUrl + '/' + id)
+              .map((res: Response) => {console.log(res.json() as Song); return res.json().song as Song});
   }
 
   getDashboardSongs(): Observable<Song[]> {

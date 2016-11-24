@@ -13,11 +13,15 @@ var http_1 = require('@angular/http');
 var AlbumService = (function () {
     function AlbumService(http) {
         this.http = http;
-        this.albumUrl = 'http://localhost:3000/album';
+        this.albumUrl = 'http://192.168.178.31:3000/album';
     }
     AlbumService.prototype.getDashboardAlbums = function () {
         return this.http.get(this.albumUrl + '/latest/6')
             .map(function (res) { return res.json().albums; });
+    };
+    AlbumService.prototype.getAlbum = function (id) {
+        return this.http.get(this.albumUrl + '/' + id)
+            .map(function (res) { console.log(res.json()); return res.json(); });
     };
     AlbumService = __decorate([
         core_1.Injectable(), 

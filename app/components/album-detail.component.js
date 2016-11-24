@@ -13,28 +13,28 @@ var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 require('rxjs/add/operator/switchMap');
 //Services
-var song_service_1 = require('../services/song.service');
-var SongDetailComponent = (function () {
-    function SongDetailComponent(songService, route, location) {
-        this.songService = songService;
+var album_service_1 = require('../services/album.service');
+var AlbumDetailComponent = (function () {
+    function AlbumDetailComponent(albumService, route, location) {
+        this.albumService = albumService;
         this.route = route;
         this.location = location;
     }
-    SongDetailComponent.prototype.ngOnInit = function () {
+    AlbumDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.songService.getSong(+params['id']); })
-            .subscribe(function (data) { return _this.song = data; }, function (error) { return console.log(error); }, function () { return console.log('Finished'); });
+            .switchMap(function (params) { return _this.albumService.getAlbum(+params['id']); })
+            .subscribe(function (data) { return _this.album = data; }, function (error) { return console.log(error); }, function () { return console.log('Finished'); });
     };
-    SongDetailComponent = __decorate([
+    AlbumDetailComponent = __decorate([
         core_1.Component({
-            selector: 'my-song-detail',
-            templateUrl: './app/templates/song-detail.component.html',
-            providers: [song_service_1.SongService]
+            selector: 'my-album-detail',
+            templateUrl: './app/templates/album-detail.component.html',
+            providers: [album_service_1.AlbumService]
         }), 
-        __metadata('design:paramtypes', [song_service_1.SongService, router_1.ActivatedRoute, common_1.Location])
-    ], SongDetailComponent);
-    return SongDetailComponent;
+        __metadata('design:paramtypes', [album_service_1.AlbumService, router_1.ActivatedRoute, common_1.Location])
+    ], AlbumDetailComponent);
+    return AlbumDetailComponent;
 }());
-exports.SongDetailComponent = SongDetailComponent;
-//# sourceMappingURL=song-detail.component.js.map
+exports.AlbumDetailComponent = AlbumDetailComponent;
+//# sourceMappingURL=album-detail.component.js.map

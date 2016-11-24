@@ -1,1 +1,17 @@
-<p>register...</p>
+<div class="container">
+  <h3>Sign Up on Soundstore</h3>
+  {{submitted}}
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" required [(ngModel)]="userModel.email" name="email" #email="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" required [(ngModel)]="userModel.password" name="password">
+    </div>
+
+    <button type="submit" class="btn btn-default">Sign Up</button>
+  </form>
+</div>

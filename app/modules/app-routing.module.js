@@ -11,14 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 //Components
-var dashboard_component_1 = require('./components/dashboard.component');
-var song_detail_component_1 = require('./components/song-detail.component');
-var register_component_1 = require('./components/register.component');
+var dashboard_component_1 = require('../components/dashboard.component');
+var song_detail_component_1 = require('../components/song-detail.component');
+var register_component_1 = require('../components/register.component');
+var album_detail_component_1 = require('../components/album-detail.component');
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
-    { path: 'song', component: song_detail_component_1.SongDetailComponent },
-    { path: 'register', component: register_component_1.RegisterComponent }
+    { path: 'song/:id', component: song_detail_component_1.SongDetailComponent },
+    { path: 'register', component: register_component_1.RegisterComponent },
+    { path: 'album/:id', component: album_detail_component_1.AlbumDetailComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

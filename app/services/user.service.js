@@ -9,25 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//Models
-var user_1 = require('../models/user');
-var RegisterComponent = (function () {
-    function RegisterComponent() {
-        this.submitted = false;
-        this.userModel = new user_1.User('', '');
+var http_1 = require('@angular/http');
+var UserService = (function () {
+    function UserService(http) {
+        this.http = http;
+        this.userUrl = 'http://192.168.178.31:3000/user';
     }
-    RegisterComponent.prototype.ngOnInit = function () { };
-    RegisterComponent.prototype.onSubmit = function () {
-        this.submitted = true;
+    UserService.prototype.signup = function (user) {
     };
-    RegisterComponent = __decorate([
-        core_1.Component({
-            selector: 'my-register',
-            templateUrl: './app/templates/register.component.html',
-        }), 
-        __metadata('design:paramtypes', [])
-    ], RegisterComponent);
-    return RegisterComponent;
+    UserService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], UserService);
+    return UserService;
 }());
-exports.RegisterComponent = RegisterComponent;
-//# sourceMappingURL=register.component.js.map
+exports.UserService = UserService;
+//# sourceMappingURL=user.service.js.map

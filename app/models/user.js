@@ -1,8 +1,10 @@
 "use strict";
-var user = (function () {
-    function user() {
+var User = (function () {
+    function User(email, password) {
+        this.email = email;
+        this.password = password;
     }
-    return user;
+    return User;
 }());
-exports.user = user;
+exports.User = User;
 //# sourceMappingURL=user.js.map

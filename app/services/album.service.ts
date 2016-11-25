@@ -7,7 +7,7 @@ import { Album } from '../models/album';
 
 @Injectable()
 export class AlbumService {
-  private albumUrl = 'http://192.168.178.31:3000/album';
+  private albumUrl = 'http://localhost:3000/album';
 
   constructor(private http: Http) {  }
 

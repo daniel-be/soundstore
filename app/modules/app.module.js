@@ -13,7 +13,6 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('../components/app.component');
 var http_1 = require('@angular/http');
-var forms_1 = require('@angular/forms');
 var app_routing_module_1 = require('./app-routing.module');
 //Components
 var song_detail_component_1 = require('../components/song-detail.component');
@@ -29,7 +28,6 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule
             ],

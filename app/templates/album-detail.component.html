@@ -24,7 +24,34 @@
     </div>
 
     <div class="attribute-group">
-      <button type="button" class="btn btn-success btn-sm">$ {{album?.price}}<i class="glyphicon glyphicon-shopping-cart"></i></button>
+      <button type="button" class="btn btn-success btn-sm" (click)="addAlbumToCart(album)">$ {{album?.price}}<i class="glyphicon glyphicon-shopping-cart"></i></button>
+    </div>
+  </div>
+</div>
+<div class="album-songs" *ngIf="foundSongsCount > 0">
+  <h4>{{foundSongsCount}} SONGS ON THIS ALBUM</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Duration</th>
+            <th>Buy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let song of albumSongs">
+            <td><a routerLink="/song/{{song?.song_id}}">{{song?.name}}</a></td>
+            <td>{{song?.artist_name}}</td>
+            <td>{{song?.genre_name}}</td>
+            <td>{{song?.duration}}</td>
+            <td><button type="button" class="btn btn-success btn-xs">$ {{song?.price}}<i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

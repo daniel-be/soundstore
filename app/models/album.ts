@@ -1,14 +1,13 @@
 export class Album {
-  constructor(
-    private album_id: number,
-    private name: string,
-    private price: number,
-    private duration: string,
-    private song_count: number,
-    private release: string,
-    private genre_id: number,
-    private artist_id: number,
-    private img_url: string,
-    private artist_name: string
-  ) { }
+  album_id: number;
+  name: string;
+  price: number;
+  duration: string;
+  song_count: number;
+  release: string;
+  img_url: string;
+  genre_id: number;
+  genre_name: string;
+  artist_id: number;
+  artist_name: string;
 }

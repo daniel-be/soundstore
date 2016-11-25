@@ -14,25 +14,43 @@ var common_1 = require('@angular/common');
 require('rxjs/add/operator/switchMap');
 //Services
 var album_service_1 = require('../services/album.service');
+var song_service_1 = require('../services/song.service');
+var cart_service_1 = require('../services/cart.service');
 var AlbumDetailComponent = (function () {
-    function AlbumDetailComponent(albumService, route, location) {
+    function AlbumDetailComponent(cartService, albumService, songService, route, location) {
+        this.cartService = cartService;
         this.albumService = albumService;
+        this.songService = songService;
         this.route = route;
         this.location = location;
     }
     AlbumDetailComponent.prototype.ngOnInit = function () {
+        this.getAlbum();
+        this.getAlbumSongs();
+    };
+    AlbumDetailComponent.prototype.getAlbum = function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.albumService.getAlbum(+params['id']); })
             .subscribe(function (data) { return _this.album = data; }, function (error) { return console.log(error); }, function () { return console.log('Finished'); });
     };
+    AlbumDetailComponent.prototype.getAlbumSongs = function () {
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.songService.getAlbumSongs(+params['id']); })
+            .subscribe(function (data) { _this.albumSongs = data; _this.foundSongsCount = data.length; }, function (error) { return console.log(error); }, function () { return console.log('Finished'); });
+    };
+    AlbumDetailComponent.prototype.addAlbumToCart = function (album) {
+        var addItem = album;
+        this.cartService.add(addItem);
+        console.log(this.cartService.getCart());
+    };
     AlbumDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-album-detail',
             templateUrl: './app/templates/album-detail.component.html',
-            providers: [album_service_1.AlbumService]
         }), 
-        __metadata('design:paramtypes', [album_service_1.AlbumService, router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [cart_service_1.CartService, album_service_1.AlbumService, song_service_1.SongService, router_1.ActivatedRoute, common_1.Location])
     ], AlbumDetailComponent);
     return AlbumDetailComponent;
 }());

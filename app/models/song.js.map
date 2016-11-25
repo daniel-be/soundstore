@@ -1,1 +1,1 @@
-{"version":3,"file":"song.js","sourceRoot":"","sources":["song.ts"],"names":[],"mappings":";AAAA;IACE,cACU,QAAgB,EAChB,SAAiB,EACjB,IAAY,EACZ,KAAa,EACb,QAAgB,EAChB,OAAe;QALf,aAAQ,GAAR,QAAQ,CAAQ;QAChB,cAAS,GAAT,SAAS,CAAQ;QACjB,SAAI,GAAJ,IAAI,CAAQ;QACZ,UAAK,GAAL,KAAK,CAAQ;QACb,aAAQ,GAAR,QAAQ,CAAQ;QAChB,YAAO,GAAP,OAAO,CAAQ;IACtB,CAAC;IACN,WAAC;AAAD,CAAC,AATD,IASC;AATY,YAAI,OAShB,CAAA"}
+{"version":3,"file":"song.js","sourceRoot":"","sources":["song.ts"],"names":[],"mappings":";AAAA;IAAA;IAaA,CAAC;IAAD,WAAC;AAAD,CAAC,AAbD,IAaC;AAbY,YAAI,OAahB,CAAA"}

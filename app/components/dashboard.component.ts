@@ -9,7 +9,6 @@ import { AlbumService } from '../services/album.service';
 @Component({
   selector: 'my-dashboard',
   templateUrl: './app/templates/dashboard.component.html',
-  providers: [ AlbumService ]
 })
 export class DashboardComponent implements OnInit {
   private dashboardAlbums: Album[]

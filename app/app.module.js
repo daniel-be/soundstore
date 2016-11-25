@@ -24,6 +24,7 @@ var album_detail_component_1 = require('./components/album-detail.component');
 var song_service_1 = require('./services/song.service');
 var album_service_1 = require('./services/album.service');
 var user_service_1 = require('./services/user.service');
+var cart_service_1 = require('./services/cart.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,6 +47,7 @@ var AppModule = (function () {
                 song_service_1.SongService,
                 album_service_1.AlbumService,
                 user_service_1.UserService,
+                cart_service_1.CartService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

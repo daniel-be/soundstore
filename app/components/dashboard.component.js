@@ -27,7 +27,6 @@ var DashboardComponent = (function () {
         core_1.Component({
             selector: 'my-dashboard',
             templateUrl: './app/templates/dashboard.component.html',
-            providers: [album_service_1.AlbumService]
         }), 
         __metadata('design:paramtypes', [album_service_1.AlbumService])
     ], DashboardComponent);

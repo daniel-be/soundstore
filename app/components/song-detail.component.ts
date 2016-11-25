@@ -12,7 +12,6 @@ import { SongService } from '../services/song.service';
 @Component({
   selector: 'my-song-detail',
   templateUrl: './app/templates/song-detail.component.html',
-  providers: [ SongService ]
 })
 export class SongDetailComponent implements OnInit {
   private song: Song;

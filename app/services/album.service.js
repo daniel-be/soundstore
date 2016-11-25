@@ -13,7 +13,7 @@ var http_1 = require('@angular/http');
 var AlbumService = (function () {
     function AlbumService(http) {
         this.http = http;
-        this.albumUrl = 'http://192.168.178.31:3000/album';
+        this.albumUrl = 'http://localhost:3000/album';
     }
     AlbumService.prototype.getDashboardAlbums = function () {
         return this.http.get(this.albumUrl + '/latest/6')

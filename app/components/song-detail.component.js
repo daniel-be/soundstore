@@ -30,7 +30,6 @@ var SongDetailComponent = (function () {
         core_1.Component({
             selector: 'my-song-detail',
             templateUrl: './app/templates/song-detail.component.html',
-            providers: [song_service_1.SongService]
         }), 
         __metadata('design:paramtypes', [song_service_1.SongService, router_1.ActivatedRoute, common_1.Location])
     ], SongDetailComponent);

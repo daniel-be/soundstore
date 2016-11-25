@@ -18,6 +18,7 @@ import { AlbumDetailComponent } from './components/album-detail.component';
 import { SongService } from './services/song.service';
 import { AlbumService } from './services/album.service';
 import { UserService } from './services/user.service';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   imports:      [
@@ -37,6 +38,7 @@ import { UserService } from './services/user.service';
     SongService,
     AlbumService,
     UserService,
+    CartService
   ],
   bootstrap: [ AppComponent ]
 })

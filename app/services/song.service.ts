@@ -6,7 +6,7 @@ import { Song } from '../models/song';
 
 @Injectable()
 export class SongService {
-  private songUrl = 'http://192.168.178.31:3000/song'
+  private songUrl = 'http://localhost:3000/song';
 
   constructor(private http: Http) {  }
 
@@ -18,5 +18,11 @@ export class SongService {
   getDashboardSongs(): Observable<Song[]> {
     return this.http.get(this.songUrl + '/latest/6')
                 .map((res: Response) => {console.log(res.json().songs); return res.json().songs as Song[]});
+  }
+
+  getAlbumSongs(id: number) :Observable<Song[]>{
+    return this.http.get(this.songUrl + '/album/' + id)
+                .map((res: Response) => res.json().songs as Song[]);
+
   }
 }

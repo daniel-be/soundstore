@@ -13,7 +13,7 @@ var http_1 = require('@angular/http');
 var SongService = (function () {
     function SongService(http) {
         this.http = http;
-        this.songUrl = 'http://192.168.178.31:3000/song';
+        this.songUrl = 'http://localhost:3000/song';
     }
     SongService.prototype.getSong = function (id) {
         return this.http.get(this.songUrl + '/' + id)
@@ -22,6 +22,10 @@ var SongService = (function () {
     SongService.prototype.getDashboardSongs = function () {
         return this.http.get(this.songUrl + '/latest/6')
             .map(function (res) { console.log(res.json().songs); return res.json().songs; });
+    };
+    SongService.prototype.getAlbumSongs = function (id) {
+        return this.http.get(this.songUrl + '/album/' + id)
+            .map(function (res) { return res.json().songs; });
     };
     SongService = __decorate([
         core_1.Injectable(), 

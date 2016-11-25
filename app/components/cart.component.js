@@ -9,24 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//Services
-var cart_service_1 = require('../services/cart.service');
-var AppComponent = (function () {
-    function AppComponent(cartService) {
-        this.cartService = cartService;
+var CartComponent = (function () {
+    function CartComponent() {
     }
-    ;
-    AppComponent.prototype.ngOnInit = function () {
-        this.cartCount = 0;
-    };
-    AppComponent = __decorate([
+    CartComponent.prototype.ngOnInit = function () { };
+    CartComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: './app/templates/app.component.html',
+            selector: 'my-cart',
+            templateUrl: './app/templates/cart.component.html',
         }), 
-        __metadata('design:paramtypes', [cart_service_1.CartService])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [])
+    ], CartComponent);
+    return CartComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CartComponent = CartComponent;
+//# sourceMappingURL=cart.component.js.map
